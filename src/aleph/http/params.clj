@@ -13,8 +13,9 @@
    Multiple occurences of the same argument yield a vector of
    values."
   [input]
-  (let [decoder (QueryStringDecoder. (str input) false)]
-    (into {} (map extract-param) (.parameters decoder))))
+  (when (some? input)
+    (let [decoder (QueryStringDecoder. (str input) false)]
+      (into {} (map extract-param) (.parameters decoder)))))
 
 (defn add-params
   "Add parsed params to a request at the `:get-params' key.

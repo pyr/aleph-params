@@ -15,6 +15,8 @@ with no additional dependencies.
 
 ## Usage
 
+Further docs on https://cljdoc.org/d/spootnik/aleph-params/CURRENT
+
 ### Ring style
 
 Wrapped requests will have get-params at the `:get-params`

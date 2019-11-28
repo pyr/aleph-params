@@ -15,8 +15,7 @@
 
   (is (= {:one "one" :two ["one" "two"]}
          (parse-params "?two=one&one=one&two=two")))
-
-  (is (thrown? java.lang.NullPointerException (parse-params nil))))
+  (is (nil? (parse-params nil))))
 
 (defn handler [params request]
   (swap! params conj (:get-params request))

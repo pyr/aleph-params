@@ -2,7 +2,7 @@
       deps  (for [[k {:keys [mvn/version exclusions]}] (:deps cfg)]
               [k version :exclusions exclusions])
       paths (:paths cfg)]
-  (defproject spootnik/aleph-params "0.1.1-SNAPSHOT"
+  (defproject spootnik/aleph-params "0.1.1"
     :description "Netty-based query string decoder"
     :url "https://github.com/pyr/aleph-params"
     :license {:name "MIT/ISC"}

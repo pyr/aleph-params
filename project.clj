@@ -1,9 +1,13 @@
-(defproject spootnik/aleph-params "0.1.1-SNAPSHOT"
-  :description "Netty-based query string decoder"
-  :url "https://github.com/pyr/aleph-params"
-  :license {:name "MIT/ISC"}
-  :dependencies [[org.clojure/clojure  "1.10.1"]
-                 [io.netty/netty-all    "4.1.43.Final"]]
-  :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
-  :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.6"]
-                                  [aleph                "0.4.7-alpha5"]]}})
+(let [cfg   (clojure.edn/read-string (slurp "deps.edn"))
+      deps  (for [[k {:keys [mvn/version exclusions]}] (:deps cfg)]
+              [k version :exclusions exclusions])
+      paths (:paths cfg)]
+  (defproject spootnik/aleph-params "0.1.1-SNAPSHOT"
+    :description "Netty-based query string decoder"
+    :url "https://github.com/pyr/aleph-params"
+    :license {:name "MIT/ISC"}
+    :dependencies ~deps
+    :source-paths ~paths
+    :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
+    :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.6"]
+                                    [aleph                "0.4.7-alpha5"]]}}))

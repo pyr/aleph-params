@@ -1,5 +1,8 @@
-# aleph-params: Netty-based query string parameters decoding
-============================================================
+aleph-params: Netty-based query string parameters decoding
+==========================================================
+
+[![Build Status](https://secure.travis-ci.org/pyr/aleph-parms.png)](http://travis-ci.org/pyr/aleph-params)
+
 
 ```clojure
     [spootnik/aleph-params "0.1.0"]

@@ -9,5 +9,7 @@
     :dependencies ~deps
     :source-paths ~paths
     :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
+    :pedantic? :abort
+    :global-vars {*warn-on-reflection* true}
     :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.6"]
                                     [aleph                "0.4.7-alpha5"]]}}))

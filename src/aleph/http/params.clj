@@ -13,7 +13,7 @@
    Multiple occurences of the same argument yield a vector of
    values."
   [input]
-  (let [decoder (QueryStringDecoder. input false)]
+  (let [decoder (QueryStringDecoder. (str input) false)]
     (into {} (map extract-param) (.parameters decoder))))
 
 (defn add-params

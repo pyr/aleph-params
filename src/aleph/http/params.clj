@@ -31,5 +31,5 @@
 
 (def interceptor
   "An interceptor-style handler for query args."
-  {:name  :params
+  {:name  ::params
    :enter #(update % :request add-params)})

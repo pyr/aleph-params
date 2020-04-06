@@ -11,5 +11,7 @@
     :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
     :pedantic? :abort
     :global-vars {*warn-on-reflection* true}
-    :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.6"]
-                                    [aleph                "0.4.7-alpha5"]]}}))
+    :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.8"]
+                                    [aleph                "0.4.7-alpha5"]]
+                     :pedantic?    :ignore
+                     :global-vars  {*warn-on-reflection* false}}}))

@@ -1,17 +1,13 @@
-(let [cfg   (clojure.edn/read-string (slurp "deps.edn"))
-      deps  (for [[k {:keys [mvn/version exclusions]}] (:deps cfg)]
-              [k version :exclusions exclusions])
-      paths (:paths cfg)]
-  (defproject spootnik/aleph-params "0.1.4-SNAPSHOT"
-    :description "Netty-based query string decoder"
-    :url "https://github.com/pyr/aleph-params"
-    :license {:name "MIT/ISC"}
-    :dependencies ~deps
-    :source-paths ~paths
-    :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
-    :pedantic? :abort
-    :global-vars {*warn-on-reflection* true}
-    :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.8"]
-                                    [aleph                "0.4.7-alpha5"]]
-                     :pedantic?    :ignore
-                     :global-vars  {*warn-on-reflection* false}}}))
+(defproject spootnik/aleph-params "0.1.4-SNAPSHOT"
+  :description "Netty-based query string decoder"
+  :url "https://github.com/pyr/aleph-params"
+  :license {:name "MIT/ISC"}
+  :dependencies [[org.clojure/clojure "1.11.1"]
+                 [io.netty/netty-codec "4.1.77.Final"]]
+  :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
+  :pedantic? :abort
+  :global-vars {*warn-on-reflection* true}
+  :profiles {:dev {:dependencies [[exoscale/interceptor "0.1.10"]
+                                  [aleph                "0.4.7"]]
+                   :pedantic?    :ignore
+                   :global-vars  {*warn-on-reflection* false}}})

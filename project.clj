@@ -1,4 +1,4 @@
-(defproject spootnik/aleph-params "0.1.4-SNAPSHOT"
+(defproject spootnik/aleph-params "0.1.4"
   :description "Netty-based query string decoder"
   :url "https://github.com/pyr/aleph-params"
   :license {:name "MIT/ISC"}

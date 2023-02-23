@@ -1,6 +1,6 @@
 (ns aleph.http.params
-  "Netty-based query string parameter handling functions"
-  (:import io.netty.handler.codec.http.QueryStringDecoder))
+  "Netty-inspired query string parameter handling functions"
+  (:import org.spootnik.QueryStringDecoder))
 
 (defn- extract-param
   "Transform query argument: keywordize key and extract single
@@ -19,7 +19,10 @@
 
 (defn add-params
   "Add parsed params to a request at the `:get-params' key.
-   Empty query strings yield an unmodified request map."
+   Empty query strings yield an unmodified request map.
+
+   The key looked up in the request is `:query-string`, as
+   defined in https://github.com/ring-clojure/ring/blob/master/SPEC"
   [{:keys [query-string] :as request}]
   (cond-> request
     (some? query-string) (assoc :get-params (parse-params query-string))))

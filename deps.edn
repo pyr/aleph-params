@@ -1,3 +1,0 @@
-{:deps  {org.clojure/clojure   {:mvn/version "1.10.1"}
-         io.netty/netty-all    {:mvn/version "4.1.43.Final"}}
- :paths ["src"]}

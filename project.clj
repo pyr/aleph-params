@@ -2,9 +2,9 @@
   :description "Netty-based query string decoder"
   :url "https://github.com/pyr/aleph-params"
   :license {:name "MIT/ISC"}
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [io.netty/netty-codec-http "4.1.77.Final"]]
+  :dependencies [[org.clojure/clojure "1.11.1"]]
   :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
+  :java-source-paths ["java"]
   :pedantic? :abort
   :global-vars {*warn-on-reflection* true}
   :profiles {:test {:dependencies [[exoscale/interceptor "0.1.10"]

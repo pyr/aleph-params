@@ -1,13 +1,12 @@
-aleph-params: Netty-based query string parameters decoding
-==========================================================
+aleph-params: Netty-inspired query string parameters decoding
+==============================================================
 
 [![Build Status](https://secure.travis-ci.org/pyr/aleph-params.png)](http://travis-ci.org/pyr/aleph-params)
 [![cljdoc badge](https://cljdoc.org/badge/spootnik/aleph-params)](https://cljdoc.org/d/spootnik/aleph-params/CURRENT)
 [![Clojars Project](https://img.shields.io/clojars/v/spootnik/aleph-params.svg)](https://clojars.org/spootnik/aleph-params)
 
-For Netty-based HTTP servers (for instance:
-[aleph](https://aleph.io)), provides query string parameter parsing
-with no additional dependencies.
+Provides query string parameter parsing with no additional dependencies, 
+borrowing the Netty battle tested code.
 
 ## Usage
 
@@ -40,6 +39,3 @@ interceptors.
 
 (parse-params "?foo=bar") ;; => {:foo "bar"}
 ```
-
-
-

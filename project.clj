@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.11.1"]]
   :deploy-repositories [["releases" :clojars] ["snapshots" :clojars]]
   :java-source-paths ["java"]
+  :javac-options ["-target" "1.8" "-source" "1.8" "-Xlint:-options"]
   :pedantic? :abort
   :global-vars {*warn-on-reflection* true}
   :profiles {:test {:dependencies [[exoscale/interceptor "0.1.10"]
